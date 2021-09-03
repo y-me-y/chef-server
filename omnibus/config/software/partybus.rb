@@ -26,7 +26,7 @@ dependency "postgresql13"
 build do
   env = with_standard_compiler_flags(with_embedded_path)
 
-  bundle config set --local without mysql
+  bundle "config set --local without mysql", env: env
   bundle "install" \
          " --path=#{install_dir}/embedded/service/gem", env: env
 
