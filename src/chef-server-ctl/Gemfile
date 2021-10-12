@@ -3,4 +3,5 @@ source "https://rubygems.org"
 gemspec
 
 gem "chef", "= 16.16.13"
+gem "chef_fixie", git: "https://github.com/chef/fixie.git", branch: "zei/remove_sequel_version_fix"
 gem "toml" # for habitat-land
