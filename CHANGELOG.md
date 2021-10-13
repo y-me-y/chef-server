@@ -1,42 +1,81 @@
 # Chef Server Changelog
 <!-- usage documentation: http://expeditor-docs.es.chef.io/configuration/changelog/ -->
-<!-- latest_release 14.9.10 -->
-## [14.9.10](https://github.com/chef/chef-server/tree/14.9.10) (2021-09-03)
+<!-- latest_release 14.10.12 -->
+## [14.10.12](https://github.com/chef/chef-server/tree/14.10.12) (2021-10-13)
 
 #### Merged Pull Requests
-- Bump activesupport from 6.1.4 to 6.1.4.1 in /src/oc_bifrost/oc-bifrost-pedant [#2751](https://github.com/chef/chef-server/pull/2751) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Produce Ubuntu 16.04 packages again [#2864](https://github.com/chef/chef-server/pull/2864) ([tas50](https://github.com/tas50))
 <!-- latest_release -->
 
-<!-- release_rollup since=14.8.7 -->
-### Changes since 14.8.7 release
+<!-- release_rollup since=14.9.23 -->
+### Changes since 14.9.23 release
 
 #### Merged Pull Requests
-- Bump activesupport from 6.1.4 to 6.1.4.1 in /src/oc_bifrost/oc-bifrost-pedant [#2751](https://github.com/chef/chef-server/pull/2751) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.10 -->
-- Bump chef from 17.4.25 to 17.4.38 in /oc-chef-pedant [#2778](https://github.com/chef/chef-server/pull/2778) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.9 -->
-- First round of chefstyle on chef-server-ctl [#2698](https://github.com/chef/chef-server/pull/2698) ([tas50](https://github.com/tas50)) <!-- 14.9.8 -->
-- Cleanup markdown and fix some lints. [#2790](https://github.com/chef/chef-server/pull/2790) ([kagarmoe](https://github.com/kagarmoe)) <!-- 14.9.7 -->
-- Move server_orgs page to server menu. [#2788](https://github.com/chef/chef-server/pull/2788) ([IanMadd](https://github.com/IanMadd)) <!-- 14.9.6 -->
-- Add `allow_email_update_only_from_manage` to hab plan to resolve automate user issue [#2775](https://github.com/chef/chef-server/pull/2775) ([vinay-satish](https://github.com/vinay-satish)) <!-- 14.9.5 -->
-- Bump chefstyle from 2.0.8 to 2.0.9 in /src/chef-server-ctl [#2771](https://github.com/chef/chef-server/pull/2771) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.4 -->
-- Bump veil from 0.3.5 to 0.3.9 in /src/chef-server-ctl [#2768](https://github.com/chef/chef-server/pull/2768) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.3 -->
-- Bump veil from 0.3.5 to 0.3.9 in /src/oc-id [#2770](https://github.com/chef/chef-server/pull/2770) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.2 -->
-- Pin to chef_secrets 0.3.9 [#2765](https://github.com/chef/chef-server/pull/2765) ([lbakerchef](https://github.com/lbakerchef)) <!-- 14.9.1 -->
-- Update to PostgreSQL 9.6.23 and 13.4 [#2764](https://github.com/chef/chef-server/pull/2764) ([tas50](https://github.com/tas50)) <!-- 14.9.0 -->
-- Update branch references to point at main &amp; pin redis release [#2762](https://github.com/chef/chef-server/pull/2762) ([tas50](https://github.com/tas50)) <!-- 14.8.19 -->
-- Bump chef from 17.3.48 to 17.4.25 in /oc-chef-pedant [#2757](https://github.com/chef/chef-server/pull/2757) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.8.18 -->
-- Update gather-logs to use chef-server-ctl [#2717](https://github.com/chef/chef-server/pull/2717) ([tas50](https://github.com/tas50)) <!-- 14.8.17 -->
-- Bump veil from `eb86d6e` to `8bcee8d` in /src/oc_bifrost/oc-bifrost-pedant [#2738](https://github.com/chef/chef-server/pull/2738) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.8.16 -->
-- Bump chefstyle from 2.0.7 to 2.0.8 in /src/chef-server-ctl [#2730](https://github.com/chef/chef-server/pull/2730) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.8.15 -->
-- Construct PostgreSQL version object using a regex. [#2720](https://github.com/chef/chef-server/pull/2720) ([lbakerchef](https://github.com/lbakerchef)) <!-- 14.8.14 -->
-- Bump omnibus-software from `c172afb` to `7eebe98` in /omnibus [#2739](https://github.com/chef/chef-server/pull/2739) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.8.13 -->
-- Avoid deprecation warning when running partybus migrations [#2746](https://github.com/chef/chef-server/pull/2746) ([tas50](https://github.com/tas50)) <!-- 14.8.12 -->
-- Remove require rubygems in chef-server-ctl [#2743](https://github.com/chef/chef-server/pull/2743) ([tas50](https://github.com/tas50)) <!-- 14.8.11 -->
-- Fix typo in partybus upgrade output [#2744](https://github.com/chef/chef-server/pull/2744) ([tas50](https://github.com/tas50)) <!-- 14.8.10 -->
-- Bump mixlib-install from 3.12.11 to 3.12.16 in /src/chef-server-ctl [#2733](https://github.com/chef/chef-server/pull/2733) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.8.9 -->
-- Point to master of chef_secrets [#2736](https://github.com/chef/chef-server/pull/2736) ([lbakerchef](https://github.com/lbakerchef)) <!-- 14.8.8 -->
+- Produce Ubuntu 16.04 packages again [#2864](https://github.com/chef/chef-server/pull/2864) ([tas50](https://github.com/tas50)) <!-- 14.10.12 -->
+- Update chef in chef-server-ctl to 16.16 [#2862](https://github.com/chef/chef-server/pull/2862) ([tas50](https://github.com/tas50)) <!-- 14.10.11 -->
+- Simplify a few things in the infra-server setup cookbook [#2859](https://github.com/chef/chef-server/pull/2859) ([tas50](https://github.com/tas50)) <!-- 14.10.10 -->
+- [OC-ID]: User email verification functionality added [#2783](https://github.com/chef/chef-server/pull/2783) ([antima-gupta](https://github.com/antima-gupta)) <!-- 14.10.9 -->
+- Bump omnibus-software from `0966668` to `a2a70e2` in /omnibus [#2856](https://github.com/chef/chef-server/pull/2856) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.10.8 -->
+- Fix add-ons not installing on Amazon Linux [#2713](https://github.com/chef/chef-server/pull/2713) ([tas50](https://github.com/tas50)) <!-- 14.10.7 -->
+- Use chef-server-ctl not private-chef-ctl in upgrade/reconfigure [#2712](https://github.com/chef/chef-server/pull/2712) ([tas50](https://github.com/tas50)) <!-- 14.10.6 -->
+- Rename the private-chef cookbook to infra-server [#2709](https://github.com/chef/chef-server/pull/2709) ([tas50](https://github.com/tas50)) <!-- 14.10.5 -->
+- Bump test-kitchen from 3.0.0 to 3.1.0 in /omnibus [#2849](https://github.com/chef/chef-server/pull/2849) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.10.4 -->
+- Bump rails from 6.1.4 to 6.1.4.1 in /src/oc-id [#2752](https://github.com/chef/chef-server/pull/2752) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.10.3 -->
+- Bump chef from 17.3.48 to 17.6.18 in /src/oc-id [#2846](https://github.com/chef/chef-server/pull/2846) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.10.2 -->
+- Bump chef from 17.4.38 to 17.6.18 in /oc-chef-pedant [#2845](https://github.com/chef/chef-server/pull/2845) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.10.1 -->
+- Bump omnibus from `7ce6173` to `37897ad` in /omnibus [#2833](https://github.com/chef/chef-server/pull/2833) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.10.0 -->
+- Bump nokogiri from 1.11.7 to 1.12.5 in /src/oc-id [#2829](https://github.com/chef/chef-server/pull/2829) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.31 -->
+- Bump omnibus-software from `d880e20` to `0966668` in /omnibus [#2841](https://github.com/chef/chef-server/pull/2841) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.30 -->
+- Bump chefstyle from 2.0.9 to 2.1.0 in /src/chef-server-ctl [#2834](https://github.com/chef/chef-server/pull/2834) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.29 -->
+- Bump rspec-rails from 5.0.1 to 5.0.2 in /src/oc-id [#2735](https://github.com/chef/chef-server/pull/2735) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.28 -->
+- Bump omnibus-software from `e0d92a6` to `d880e20` in /omnibus [#2816](https://github.com/chef/chef-server/pull/2816) ([dependabot[bot]](https://github.com/dependabot[bot])) <!-- 14.9.27 -->
+- Fix branch name in docs makefile [#2810](https://github.com/chef/chef-server/pull/2810) ([IanMadd](https://github.com/IanMadd)) <!-- 14.9.26 -->
+- EOL 13 docs [#2809](https://github.com/chef/chef-server/pull/2809) ([kagarmoe](https://github.com/kagarmoe)) <!-- 14.9.25 -->
+- Release tag should be verified in automate environment as part of rel… [#2797](https://github.com/chef/chef-server/pull/2797) ([jashaik](https://github.com/jashaik)) <!-- 14.9.24 -->
 <!-- release_rollup -->
 
 <!-- latest_stable_release -->
+## [14.9.23](https://github.com/chef/chef-server/tree/14.9.23) (2021-09-09)
+
+#### Merged Pull Requests
+- Point to master of chef_secrets [#2736](https://github.com/chef/chef-server/pull/2736) ([lbakerchef](https://github.com/lbakerchef))
+- Bump mixlib-install from 3.12.11 to 3.12.16 in /src/chef-server-ctl [#2733](https://github.com/chef/chef-server/pull/2733) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Fix typo in partybus upgrade output [#2744](https://github.com/chef/chef-server/pull/2744) ([tas50](https://github.com/tas50))
+- Remove require rubygems in chef-server-ctl [#2743](https://github.com/chef/chef-server/pull/2743) ([tas50](https://github.com/tas50))
+- Avoid deprecation warning when running partybus migrations [#2746](https://github.com/chef/chef-server/pull/2746) ([tas50](https://github.com/tas50))
+- Bump omnibus-software from `c172afb` to `7eebe98` in /omnibus [#2739](https://github.com/chef/chef-server/pull/2739) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Construct PostgreSQL version object using a regex. [#2720](https://github.com/chef/chef-server/pull/2720) ([lbakerchef](https://github.com/lbakerchef))
+- Bump chefstyle from 2.0.7 to 2.0.8 in /src/chef-server-ctl [#2730](https://github.com/chef/chef-server/pull/2730) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump veil from `eb86d6e` to `8bcee8d` in /src/oc_bifrost/oc-bifrost-pedant [#2738](https://github.com/chef/chef-server/pull/2738) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Update gather-logs to use chef-server-ctl [#2717](https://github.com/chef/chef-server/pull/2717) ([tas50](https://github.com/tas50))
+- Bump chef from 17.3.48 to 17.4.25 in /oc-chef-pedant [#2757](https://github.com/chef/chef-server/pull/2757) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Update branch references to point at main &amp; pin redis release [#2762](https://github.com/chef/chef-server/pull/2762) ([tas50](https://github.com/tas50))
+- Update to PostgreSQL 9.6.23 and 13.4 [#2764](https://github.com/chef/chef-server/pull/2764) ([tas50](https://github.com/tas50))
+- Pin to chef_secrets 0.3.9 [#2765](https://github.com/chef/chef-server/pull/2765) ([lbakerchef](https://github.com/lbakerchef))
+- Bump veil from 0.3.5 to 0.3.9 in /src/oc-id [#2770](https://github.com/chef/chef-server/pull/2770) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump veil from 0.3.5 to 0.3.9 in /src/chef-server-ctl [#2768](https://github.com/chef/chef-server/pull/2768) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump chefstyle from 2.0.8 to 2.0.9 in /src/chef-server-ctl [#2771](https://github.com/chef/chef-server/pull/2771) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Add `allow_email_update_only_from_manage` to hab plan to resolve automate user issue [#2775](https://github.com/chef/chef-server/pull/2775) ([vinay-satish](https://github.com/vinay-satish))
+- Move server_orgs page to server menu. [#2788](https://github.com/chef/chef-server/pull/2788) ([IanMadd](https://github.com/IanMadd))
+- Cleanup markdown and fix some lints. [#2790](https://github.com/chef/chef-server/pull/2790) ([kagarmoe](https://github.com/kagarmoe))
+- First round of chefstyle on chef-server-ctl [#2698](https://github.com/chef/chef-server/pull/2698) ([tas50](https://github.com/tas50))
+- Bump chef from 17.4.25 to 17.4.38 in /oc-chef-pedant [#2778](https://github.com/chef/chef-server/pull/2778) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump activesupport from 6.1.4 to 6.1.4.1 in /src/oc_bifrost/oc-bifrost-pedant [#2751](https://github.com/chef/chef-server/pull/2751) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump activesupport from 6.1.4 to 6.1.4.1 in /oc-chef-pedant [#2750](https://github.com/chef/chef-server/pull/2750) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Bump omnibus-software from `b774203` to `cd34c3b` in /omnibus [#2792](https://github.com/chef/chef-server/pull/2792) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- Update another Chef Server -&gt; Chef Infra Server [#2791](https://github.com/chef/chef-server/pull/2791) ([tas50](https://github.com/tas50))
+- Bump omnibus-software from `cd34c3b` to `13ad157` in /omnibus [#2794](https://github.com/chef/chef-server/pull/2794) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- updated config default value of allow_email_update_only_from_manage [#2793](https://github.com/chef/chef-server/pull/2793) ([jashaik](https://github.com/jashaik))
+- Update URLs for our pricing page [#2795](https://github.com/chef/chef-server/pull/2795) ([tas50](https://github.com/tas50))
+- Changing the uri in the sqitch.plan causes sqitch to deploy some of the older changes that do not exist and fail an upgrade in automate. Reverting this change currently until we figure that out. [#2796](https://github.com/chef/chef-server/pull/2796) ([PrajaktaPurohit](https://github.com/PrajaktaPurohit))
+- updating the chef-zero version [#2798](https://github.com/chef/chef-server/pull/2798) ([vinay-satish](https://github.com/vinay-satish))
+- Changing the uri in the sqitch.plan causes sqitch to deploy some of the older changes that do not exist and fail an upgrade in automate. Reverting this change currently until we figure that out. [#2799](https://github.com/chef/chef-server/pull/2799) ([PrajaktaPurohit](https://github.com/PrajaktaPurohit))
+- Pint to the original version redis was pointed at: 5.0.7 [#2800](https://github.com/chef/chef-server/pull/2800) ([PrajaktaPurohit](https://github.com/PrajaktaPurohit))
+- Bump omnibus-software from `13ad157` to `e0d92a6` in /omnibus [#2801](https://github.com/chef/chef-server/pull/2801) ([dependabot[bot]](https://github.com/dependabot[bot]))
+- The default PostgreSQL version is 13.4 [#2802](https://github.com/chef/chef-server/pull/2802) ([PrajaktaPurohit](https://github.com/PrajaktaPurohit))
+- Setting the pg to 13.3 in omnibus and default attribute [#2807](https://github.com/chef/chef-server/pull/2807) ([vinay-satish](https://github.com/vinay-satish))
+<!-- latest_stable_release -->
+
 ## [14.8.7](https://github.com/chef/chef-server/tree/14.8.7) (2021-08-10)
 
 #### Merged Pull Requests
@@ -67,7 +106,6 @@
 - Fix a notification for firing partybus [#2718](https://github.com/chef/chef-server/pull/2718) ([tas50](https://github.com/tas50))
 - Fix error (malformed version number string) [#2714](https://github.com/chef/chef-server/pull/2714) ([lbakerchef](https://github.com/lbakerchef))
 - Skipping auto reindex for external postgreSQL [#2721](https://github.com/chef/chef-server/pull/2721) ([jashaik](https://github.com/jashaik))
-<!-- latest_stable_release -->
 
 ## [14.7.13](https://github.com/chef/chef-server/tree/14.7.13) (2021-07-28)
 
