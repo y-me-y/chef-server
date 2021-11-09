@@ -184,7 +184,7 @@ bash 'fetch trusted certs if mtls enabled' do
       export PATH=/opt/opscode/embedded/bin:$PATH
       /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb
   END
-  only_if [ca && cert && key].reduce :&
+  only_if [ca, cert, key].reduce :&
 end
 
 ruby_block 'print reconfigure warnings' do
