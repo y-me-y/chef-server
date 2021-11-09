@@ -175,6 +175,17 @@ file '/etc/opscode/chef-server-running.json' do
   content lazy { OmnibusHelper.chef_server_running_content(node) }
 end
 
+bash 'fetch trusted certs if mtls enabled' do
+  ca   = node['private_chef']['nginx']['ssl_client_ca']
+  cert = node['private_chef']['nginx']['pivotal_ssl_client_cert']
+  key  = node['private_chef']['nginx']['pivotal_ssl_client_key']
+  code <<~END
+      # FETCHING CERTS
+      sudo --preserve-env=PATH /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb
+  END
+  only_if [ca && cert && key].reduce :&
+end
+
 ruby_block 'print reconfigure warnings' do
   block do
     ChefServer::Warnings.print_warnings
