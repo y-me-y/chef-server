@@ -175,17 +175,17 @@ file '/etc/opscode/chef-server-running.json' do
   content lazy { OmnibusHelper.chef_server_running_content(node) }
 end
 
-bash 'fetch trusted certs if mtls enabled' do
-  ca           = node['private_chef']['nginx']['ssl_client_ca']
-  cert         = node['private_chef']['nginx']['pivotal_ssl_client_cert']
-  key          = node['private_chef']['nginx']['pivotal_ssl_client_key']
-  mtls_enabled = [ca, cert, key].reduce :&
-  
-  puts "ca   == #{node['private_chef']['nginx']['ssl_client_ca']}"
-  puts "cert == #{node['private_chef']['nginx']['pivotal_ssl_client_cert']}"
-  puts "ckey == #{node['private_chef']['nginx']['pivotal_ssl_client_key']}"
-  puts "mtls_enabled == #{[ca, cert, key].reduce :&}"
+ca           = node['private_chef']['nginx']['ssl_client_ca']
+cert         = node['private_chef']['nginx']['pivotal_ssl_client_cert']
+key          = node['private_chef']['nginx']['pivotal_ssl_client_key']
+mtls_enabled = [ca, cert, key].reduce :&
 
+puts "ca   == #{node['private_chef']['nginx']['ssl_client_ca']}"
+puts "cert == #{node['private_chef']['nginx']['pivotal_ssl_client_cert']}"
+puts "key  == #{node['private_chef']['nginx']['pivotal_ssl_client_key']}"
+puts "mtls_enabled == #{mtls_enabled}"
+
+bash 'fetch trusted certs if mtls enabled' do
   code <<~END
       sudo --preserve-env=PATH /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb
   END
