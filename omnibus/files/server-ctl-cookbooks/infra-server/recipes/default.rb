@@ -179,8 +179,13 @@ bash 'fetch trusted certs if mtls enabled' do
   ca   = node['private_chef']['nginx']['ssl_client_ca']
   cert = node['private_chef']['nginx']['pivotal_ssl_client_cert']
   key  = node['private_chef']['nginx']['pivotal_ssl_client_key']
+
+  puts "ca   == #{node['private_chef']['nginx']['ssl_client_ca']}"
+  puts "cert == #{node['private_chef']['nginx']['pivotal_ssl_client_cert']}"
+  puts "ckey == #{node['private_chef']['nginx']['pivotal_ssl_client_key']}"
+  puts "[ca, cert, key].reduce :& == #{[ca, cert, key].reduce :&}"
+
   code <<~END
-      # FETCHING CERTS
       export PATH=/opt/opscode/embedded/bin:$PATH
       /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb
   END
