@@ -175,21 +175,21 @@ file '/etc/opscode/chef-server-running.json' do
   content lazy { OmnibusHelper.chef_server_running_content(node) }
 end
 
+ca   = node['private_chef']['nginx']['ssl_client_ca']
+cert = node['private_chef']['nginx']['pivotal_ssl_client_cert']
+key  = node['private_chef']['nginx']['pivotal_ssl_client_key']
+
+puts "ca   == #{node['private_chef']['nginx']['ssl_client_ca']}"
+puts "cert == #{node['private_chef']['nginx']['pivotal_ssl_client_cert']}"
+puts "ckey == #{node['private_chef']['nginx']['pivotal_ssl_client_key']}"
+puts "[ca, cert, key].reduce :& == #{[ca, cert, key].reduce :&}"
+
 bash 'fetch trusted certs if mtls enabled' do
-  ca   = node['private_chef']['nginx']['ssl_client_ca']
-  cert = node['private_chef']['nginx']['pivotal_ssl_client_cert']
-  key  = node['private_chef']['nginx']['pivotal_ssl_client_key']
-
-  puts "ca   == #{node['private_chef']['nginx']['ssl_client_ca']}"
-  puts "cert == #{node['private_chef']['nginx']['pivotal_ssl_client_cert']}"
-  puts "ckey == #{node['private_chef']['nginx']['pivotal_ssl_client_key']}"
-  puts "[ca, cert, key].reduce :& == #{[ca, cert, key].reduce :&}"
-
   code <<~END
       export PATH=/opt/opscode/embedded/bin:$PATH
       /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb
   END
-  only_if [ca, cert, key].reduce :&
+  only_if {[ca, cert, key].reduce :&}
 end
 
 ruby_block 'print reconfigure warnings' do
