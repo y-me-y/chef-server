@@ -178,7 +178,7 @@ end
 ca           = node['private_chef']['nginx']['ssl_client_ca']
 cert         = node['private_chef']['nginx']['pivotal_ssl_client_cert']
 key          = node['private_chef']['nginx']['pivotal_ssl_client_key']
-mtls_enabled = [ca, cert, key].reduce :&
+mtls_enabled = ca && cert && key
 
 puts "ca   == #{node['private_chef']['nginx']['ssl_client_ca']}"
 puts "cert == #{node['private_chef']['nginx']['pivotal_ssl_client_cert']}"
