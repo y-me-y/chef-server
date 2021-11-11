@@ -179,11 +179,10 @@ bash 'fetch trusted certs if mtls enabled' do
   ca           = node['private_chef']['nginx']['ssl_client_ca']
   cert         = node['private_chef']['nginx']['pivotal_ssl_client_cert']
   key          = node['private_chef']['nginx']['pivotal_ssl_client_key']
-  mtls_enabled = ca && cert && key
-
-  code <<~END
-      sudo --preserve-env=PATH /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb
-  END
+  #mtls_enabled = ca && cert && key
+  # mtls is enabled if all are non-empty strings
+  mtls_enabled = [ca, cert, key].collect{|x| !x.nil? && !x.empty?}.inject :&
+  code         = 'sudo --preserve-env=PATH /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb'
   only_if {mtls_enabled}
 end
 
