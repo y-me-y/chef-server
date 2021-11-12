@@ -176,8 +176,8 @@ file '/etc/opscode/chef-server-running.json' do
 end
 
 bash 'fetch trusted certs if mtls enabled' do
-  # these can be nil, false, or strings [is this true?].
-  # mtls is enabled if all are non-empty strings
+  # nil | false | String [is this true?]
+  # enable mtls if all non-empty strings
   ca           = node['private_chef']['nginx']['ssl_client_ca']
   cert         = node['private_chef']['nginx']['pivotal_ssl_client_cert']
   key          = node['private_chef']['nginx']['pivotal_ssl_client_key']
