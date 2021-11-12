@@ -185,7 +185,7 @@ bash 'fetch trusted certs if mtls enabled' do
   #code 'sudo --preserve-env=PATH /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb'
   code <<~END
     export PATH=/opt/opscode/embedded/bin:$PATH
-    /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb
+    /opt/opscode/embedded/bin/knife ssl fetch --verbose -c /etc/opscode/pivotal.rb
   END
   only_if {mtls_enabled}
 end
