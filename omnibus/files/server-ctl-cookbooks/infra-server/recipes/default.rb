@@ -184,8 +184,10 @@ bash 'fetch trusted certs if mtls enabled' do
   mtls_enabled = [ca, cert, key].collect{|x| x && !x.empty?}.inject :&
   #code 'sudo --preserve-env=PATH /opt/opscode/embedded/bin/knife ssl fetch -c /etc/opscode/pivotal.rb'
   code <<~END
+    echo BEGIN FETCH MTLS CERTS
     export PATH=/opt/opscode/embedded/bin:$PATH
     /opt/opscode/embedded/bin/knife ssl fetch --verbose -c /etc/opscode/pivotal.rb
+    echo END   FETCH MTLS CERTS
   END
   only_if {mtls_enabled}
 end
