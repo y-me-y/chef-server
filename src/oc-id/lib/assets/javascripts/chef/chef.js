@@ -1,5 +1,3 @@
-//= require foundation/foundation
-//= require foundation
 
 (function($, window, document) {
 
