@@ -110,6 +110,40 @@ To restore a Chef Backend-based Chef Infra Server cluster:
     ```bash
     chef-server-ctl restore /path/to/chef-server-backup.tar.gz
     ```
+    {{< note >}}
+
+    For the Chef Infra Server version earlier than 14.11.36, the `chef-server-ctl restore` will not work. It is best to upgrade to the version 14.11.36 or later.
+    For a quick fix you can edit `/opt/opscode/embedded/lib/ruby/gems/2.7.0/gems/chef-server-ctl-1.1.0/bin/chef-server-ctl` and add the following methods
+    ```bash
+        # External Solr/ElasticSearch Commands
+    def external_status_opscode_solr4(_detail_level)
+      solr = external_services['opscode-solr4']['external_url']
+      begin
+        Chef::HTTP.new(solr).get(solr_status_url)
+        puts "run: opscode-solr4: connected OK to #{solr}"
+      rescue StandardError => e
+        puts "down: opscode-solr4: failed to connect to #{solr}: #{e.message.split("\n")[0]}"
+      end
+    end
+
+    def external_cleanse_opscode_solr4(perform_delete)
+      log <<-EOM
+Cleansing data in a remote Sol4 instance is not currently supported.
+EOM
+    end
+
+    def solr_status_url
+      case running_service_config('opscode-erchef')['search_provider']
+      when "elasticsearch"
+        "/chef"
+      else
+        "/admin/ping?wt=json"
+      end
+    end
+    ```
+
+    {{< /note >}}
+
 
 4.  Run the `reindex` command to re-populate your search index
 
